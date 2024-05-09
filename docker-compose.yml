@@ -1,6 +1,6 @@
 services:
   web:
-    image: accwilson23055/pythontestlab
+    image: accwilson23055/pythontestlab:forlab
     build: .
     volumes:
       - .:/code
