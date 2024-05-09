@@ -12,7 +12,7 @@ build_job:
     variables:
         DOCKER_TLS_CERDIR: "/certs"
     before_script:
-        - echo $CI_REGISTRY_PASSWORD | docker login docker.io $CI_REGISTRY --username $CI_REGISTRY_USER --password-stdin
+        - echo $CI_REGISTRY_PASSWORD | docker login docker.io --username $CI_REGISTRY_USER --password-stdin
     script:
         - docker build -t accwilson23055/pythontest .
         - docker tag accwilson23055/pythontest accwilson23055/pythontestlab:forlab
