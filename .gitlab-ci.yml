@@ -20,7 +20,7 @@ build_job:
         DOCKER_TLS_CERDIR: "/certs"
     stage: build
     before_script:
-        -docker login $CI_REGISTRY --username $CI_REGISTRY_USER -password $CI_REGISTRY_PASSWORD docker.io/accwilson23055/pythontest
+        - docker login $CI_REGISTRY --username $CI_REGISTRY_USER -password $CI_REGISTRY_PASSWORD docker.io/accwilson23055/pythontest
     script:
         - docker build -t accwilson23055/pythontest:dockersoftforpython .
         - docker push accwilson23055/pythontest:dockersoftforpython
