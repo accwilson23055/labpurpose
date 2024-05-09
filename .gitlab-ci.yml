@@ -3,10 +3,19 @@ stages:
     - build
     - deploy
 
+run_tests:
+    image: python:latest
+    stage: test
+    before_script:
+        - pip install --upgrade pip
+        - pip install -r requirements.txt
+    script:
+        - python -m pytest
+
 
 build_job:
     image: docker:26.1.1
-    stage: test
+    stage: build
     services:
         - docker:26.1.1-dind
     variables:
@@ -20,11 +29,4 @@ build_job:
         - docker push accwilson23055/pythontestlab:forlab
         - docker logout
 
-run_tests:
-    image: python:latest
-    stage: build
-    before_script:
-        - pip install --upgrade pip
-        - pip install -r requirements.txt
-    script:
-        - python -m pytest
+
