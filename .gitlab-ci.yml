@@ -4,7 +4,6 @@ stages:
     - deploy
 
 run_tests:
-    stage: test
     image: python:latest
     before_script:
         - pip install --upgrade pip
@@ -23,6 +22,6 @@ build_job:
         - echo $CI_REGISTRY_PASSWORD | docker login $CI_REGISTRY --username $CI_REGISTRY_USER --password-stdin
     script:
         - docker build -t accwilson23055/pythontest .
-        - docker tag pythonfiled accwilson23055/pythontest/pythonfiled
+        - docker tag accwilson23055/pythontest pythonfiled
         - docker push /accwilson23055/pythontest:pythonfiled
         - docker logout
