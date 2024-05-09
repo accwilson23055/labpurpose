@@ -1,4 +1,5 @@
 from main import app
+from werkzeug.urls import url_quote
 
 def test_home_route():
     """Make sure we get an expected response from home route"""
