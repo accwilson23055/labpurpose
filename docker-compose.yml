@@ -1,5 +1,6 @@
 services:
   web:
+    image: accwilson23055/pythontestlab
     build: .
     volumes:
       - .:/code
