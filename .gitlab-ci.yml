@@ -12,12 +12,12 @@ run_tests:
     script:
         - python -m pytest
 
-buid_job:
+build_job:
     image: docker:26.1.1-cli
     services:
         - docker:26.1.1-dind
     variables:
-        DOCKER_TLS_CERDIR:"/certs"
+        DOCKER_TLS_CERDIR: "/certs"
     stage: build
     before_script:
         - docker login -u $user_github -p $pass_github
