@@ -1,6 +1,6 @@
-FROM python:3.10.8-slim-buster
+FROM python:lastest
 ADD . /code
 WORKDIR /code
 RUN pip install -r requirements.txt
-EXPOSE 80
+EXPOSE 8080
 CMD python main.py
