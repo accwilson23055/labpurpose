@@ -1,4 +1,4 @@
-FROM python:lastest
+FROM python:latest
 ADD . /code
 WORKDIR /code
 RUN pip install -r requirements.txt
