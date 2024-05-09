@@ -27,7 +27,7 @@ build_job:
         - docker build -t accwilson23055/pythontest .
         - docker tag accwilson23055/pythontest accwilson23055/pythontestlab:forlab
         - docker push accwilson23055/pythontestlab:forlab
-        - docker-compose up -d --no-build
+        - docker images
         - docker logout
 
 
