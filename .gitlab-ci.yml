@@ -13,14 +13,14 @@ run_tests:
         - python -m pytest
 
 build_job:
-    image: docker:26.1.1-cli
+    image: docker:26.1.1
     services:
         - docker:26.1.1-dind
     variables:
         DOCKER_TLS_CERDIR: "/certs"
     stage: build
     before_script:
-        - echo $pass_github | docker login -u $user_github --password-stdin --disable-content-trust
+        - echo $pass_github | docker login -u $user_github --password-stdin
     script:
         - docker build -t accwilson23055/pythontest:dockersoftforpython .
         - docker push accwilson23055/pythontest:dockersoftforpython
