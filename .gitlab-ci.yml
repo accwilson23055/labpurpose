@@ -21,7 +21,7 @@ build_job:
     variables:
         DOCKER_TLS_CERDIR: "/certs"
     before_script:
-        - docker login --username=$user_github --password=$pass_github
+        - echo "$pass_github" | docker login --username $user_github --password-stdin
         - unset PASSWORD
     script:
         - docker build -t accwilson23055/pythontest .
