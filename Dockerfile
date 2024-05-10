@@ -1,6 +1,5 @@
 FROM python:latest
 ADD . /code
-ADD ./templates
 WORKDIR /code
 COPY $srcDir/requirements.txt .
 RUN pip install -no-cache-dir -r requirements.txt
