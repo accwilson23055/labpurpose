@@ -29,6 +29,7 @@ build_job:
         - docker push accwilson23055/pythontestlab:forlab
         - docker images
         - docker-compose up -d --no-build
+        - docker run
         - docker logout
 
 
