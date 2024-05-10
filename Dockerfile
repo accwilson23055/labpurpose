@@ -1,6 +1,10 @@
 FROM python:latest
 ADD . /code
+ADD ./templates
 WORKDIR /code
-RUN pip install -r requirements.txt
+COPY $srcDir/requirements.txt .
+RUN pip install -no-cache-dir -r requirements.txt
+COPY $srcDir/main.py .
+COPY $srcDir/templates ./templates
 EXPOSE 8008
 CMD python main.py
